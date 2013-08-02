@@ -3,8 +3,10 @@
 #include "jitter.h"
 #include "vector.h"
 
-#include "ir/ir-instr.h"
-#include "ir/ir-term-instr.h"
+#include "ir/ir-instr-ref.h"
+
+struct ir_instr;
+struct ir_term_instr;
 
 /**
  * A list of instructions possibly followed by a terminator
@@ -13,9 +15,9 @@
  * Has ownership (responsibility to destroy) the instructions (inc. term)
  * in it.
  */
-typedef struct {
+typedef struct ir_block {
     vector/*<const ir_instr*>*/ instrs;
-    ir_term_instr* terminal;
+    struct ir_term_instr* terminal;
 } ir_block;
 
 ir_block* ir_create_block ();
@@ -27,7 +29,7 @@ void ir_destroy_block (ir_block* block);
  * @return a reference to the instruction, to be used as the input
  *         to other instructions
  */
-ir_instr_ref ir_block_add (ir_block* block, const ir_instr* instr);
+ir_instr_ref ir_block_add (ir_block* block, const struct ir_instr* instr);
 
 /**
  * Provide a terminal instruction for the block
@@ -37,4 +39,4 @@ ir_instr_ref ir_block_add (ir_block* block, const ir_instr* instr);
  *
  * @return Whether it succeeded (block may already have terminal)
  */
-bool ir_block_finish (ir_block* block, ir_term_instr* terminal);
+bool ir_block_finish (ir_block* block, struct ir_term_instr* terminal);

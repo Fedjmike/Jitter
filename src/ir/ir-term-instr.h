@@ -10,7 +10,7 @@ typedef enum {
  * A terminal instruction to end a block
  * @see ir_block
  */
-typedef struct {
+typedef struct ir_term_instr {
     ir_term_instr_tag tag;
 
     union {
