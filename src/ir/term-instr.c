@@ -1,4 +1,4 @@
-#include "ir/ir-term-instr.h"
+#include "term-instr.h"
 
 #include "debug.h"
 

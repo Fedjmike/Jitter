@@ -2,9 +2,7 @@
 
 #include "debug.h"
 
-#include "ir/ir-instr.h"
-#include "ir/ir-term-instr.h"
-#include "ir/ir-block.h"
+#include "ir.h"
 
 #include "stdlib.h"
 

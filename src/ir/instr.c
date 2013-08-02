@@ -1,4 +1,4 @@
-#include "ir/ir-instr.h"
+#include "instr.h"
 
 #include "debug.h"
 

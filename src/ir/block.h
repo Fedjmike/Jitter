@@ -3,7 +3,7 @@
 #include "jitter.h"
 #include "vector.h"
 
-#include "ir/ir-instr-ref.h"
+#include "instr-ref.h"
 
 struct ir_instr;
 struct ir_term_instr;

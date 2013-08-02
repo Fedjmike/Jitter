@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ir/ir-instr-ref.h"
-#include "ir/ir-instr.h"
-#include "ir/ir-term-instr.h"
-#include "ir/ir-block.h"
+#include "ir/instr-ref.h"
+#include "ir/instr.h"
+#include "ir/term-instr.h"
+#include "ir/block.h"

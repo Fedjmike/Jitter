@@ -1,6 +1,6 @@
 #pragma once
 
-#include "ir/ir-instr-ref.h"
+#include "instr-ref.h"
 
 typedef enum {
     ir_return

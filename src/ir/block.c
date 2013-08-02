@@ -1,7 +1,7 @@
-#include "ir/ir-block.h"
+#include "block.h"
 
-#include "ir/ir-instr.h"
-#include "ir/ir-term-instr.h"
+#include "instr.h"
+#include "term-instr.h"
 
 #include "stdlib.h"
 #include "assert.h"
