@@ -8,6 +8,7 @@ typedef enum {
 } ir_instr_tag;
 
 typedef enum {
+    ir_bop_undefined,
     ir_bop_add,
     ir_bop_sub,
     ir_bop_mul,
