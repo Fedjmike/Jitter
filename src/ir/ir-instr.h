@@ -1,0 +1,34 @@
+#pragma once
+
+#include "ir/ir-instr-ref.h"
+
+typedef enum {
+    ir_bop,
+    ir_immediate
+} ir_instr_tag;
+
+typedef enum {
+    ir_bop_add,
+    ir_bop_sub,
+    ir_bop_mul,
+    ir_bop_div
+} ir_bop_tag;
+
+typedef struct {
+    ir_instr_tag tag;
+
+    union {
+        /*bop*/
+        struct {
+            ir_bop_tag bop;
+            ir_instr_ref l, r;
+        };
+        /*immediate*/
+        int imm;
+    };
+} ir_instr;
+
+ir_instr* ir_create_bop (ir_bop_tag bop, ir_instr_ref l, ir_instr_ref r);
+ir_instr* ir_create_immediate (int imm);
+
+void ir_destroy_instr (ir_instr* instr);
