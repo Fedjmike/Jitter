@@ -19,6 +19,8 @@ typedef struct {
     };
 } ir_term_instr;
 
+const char* ir_term_instr_tag_get_str (ir_term_instr_tag tag);
+
 ir_term_instr* ir_create_return (ir_instr_ref ret);
 
 void ir_destroy_term_instr (ir_term_instr* terminal);

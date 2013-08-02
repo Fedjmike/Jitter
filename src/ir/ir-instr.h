@@ -33,6 +33,9 @@ typedef struct ir_instr {
     };
 } ir_instr;
 
+const char* ir_instr_tag_get_str (ir_instr_tag tag);
+const char* ir_bop_tag_get_str (ir_bop_tag tag);
+
 ir_instr* ir_create_bop (ir_bop_tag bop, ir_instr_ref l, ir_instr_ref r);
 ir_instr* ir_create_immediate (int imm);
 
