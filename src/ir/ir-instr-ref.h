@@ -7,5 +7,6 @@ struct ir_instr;
  * @see ir_instr @see ir_block
  *
  * Used as the input to other instructions
+ * Valid only within the same block as the instruction it is referencing
  */
-typedef const struct ir_instr* ir_instr_ref;
+typedef int ir_instr_ref;

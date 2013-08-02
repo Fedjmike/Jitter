@@ -20,8 +20,9 @@ void ir_destroy_block (ir_block* block) {
 }
 
 ir_instr_ref ir_block_add (ir_block* block, const ir_instr* instr) {
+    int index = block->instrs.length;
     vector_add(&block->instrs, (void*) instr);
-    return instr;
+    return index;
 }
 
 bool ir_block_finish (ir_block* block, ir_term_instr* terminal) {
