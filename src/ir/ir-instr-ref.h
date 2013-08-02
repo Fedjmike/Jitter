@@ -8,4 +8,4 @@ struct ir_instr;
  *
  * Used as the input to other instructions
  */
-typedef struct ir_instr* ir_instr_ref;
+typedef const struct ir_instr* ir_instr_ref;

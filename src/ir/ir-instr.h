@@ -18,7 +18,7 @@ typedef enum {
  * A value returning, non-terminal IR instruction
  * @see ir_block @see ir_instr_ref
  */
-typedef struct {
+typedef struct ir_instr {
     ir_instr_tag tag;
 
     union {

@@ -1,15 +1,20 @@
 #pragma once
 
+#include "jitter.h"
 #include "vector.h"
 
 #include "ir/ir-instr.h"
+#include "ir/ir-term-instr.h"
 
 /**
  * A list of instructions possibly followed by a terminator
  * @see ir_instr @see ir_instr_ref @see ir_term_instr
+ *
+ * Has ownership (responsibility to destroy) the instructions (inc. term)
+ * in it.
  */
 typedef struct {
-    vector/*<ir_instr*>*/ instrs;
+    vector/*<const ir_instr*>*/ instrs;
     ir_term_instr* terminal;
 } ir_block;
 
@@ -22,11 +27,14 @@ void ir_destroy_block (ir_block* block);
  * @return a reference to the instruction, to be used as the input
  *         to other instructions
  */
-ir_instr_ref ir_block_add (ir_block* block, ir_instr* instr);
+ir_instr_ref ir_block_add (ir_block* block, const ir_instr* instr);
 
 /**
  * Provide a terminal instruction for the block
  *
- * @return non-zero on error (usually, block already has terminal)
+ * As the block assumes ownership of the terminal, and this can fail,
+ * if it does then it will immediately destroy the terminal.
+ *
+ * @return Whether it succeeded (block may already have terminal)
  */
-int ir_block_finish (ir_block* block, ir_term_instr* terminal);
+bool ir_block_finish (ir_block* block, ir_term_instr* terminal);
