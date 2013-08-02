@@ -15,6 +15,8 @@ void ir_destroy_block (ir_block* block) {
 
     vector_destroy_objs(&block->instrs, (dtor_type) ir_destroy_instr);
     ir_destroy_term_instr(block->terminal);
+
+    free(block);
 }
 
 ir_instr_ref ir_block_add (ir_block* block, const ir_instr* instr) {
