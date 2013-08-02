@@ -14,6 +14,10 @@ typedef enum {
     ir_bop_div
 } ir_bop_tag;
 
+/**
+ * A value returning, non-terminal IR instruction
+ * @see ir_block @see ir_instr_ref
+ */
 typedef struct {
     ir_instr_tag tag;
 

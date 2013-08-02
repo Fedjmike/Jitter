@@ -6,6 +6,10 @@ typedef enum {
     ir_return
 } ir_term_instr_tag;
 
+/**
+ * A terminal instruction to end a block
+ * @see ir_block
+ */
 typedef struct {
     ir_term_instr_tag tag;
 
