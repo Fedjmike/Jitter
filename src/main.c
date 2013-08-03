@@ -1,5 +1,6 @@
 #include "ir.h"
 
+#include "printer.h"
 #include "runner.h"
 
 #include "stdio.h"
@@ -18,6 +19,8 @@ int main (int argc, char** argv) {
                                ))
             ))
     ));
+
+    printer(code);
 
     /*Run the code and print the result*/
     printf(">> 5*(4+9)\n%d\n", runner(code));

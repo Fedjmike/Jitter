@@ -22,11 +22,11 @@ const char* ir_instr_tag_get_str (ir_instr_tag tag) {
 
 const char* ir_bop_tag_get_str (ir_bop_tag tag) {
     switch (tag) {
-        case ir_bop_undefined: return "ir_bop_undefined";
-        case ir_bop_add: return "ir_bop_add";
-        case ir_bop_sub: return "ir_bop_sub";
-        case ir_bop_mul: return "ir_bop_mul";
-        case ir_bop_div: return "ir_bop_div";
+        case ir_bop_undefined: return "undefined";
+        case ir_bop_add: return "add";
+        case ir_bop_sub: return "sub";
+        case ir_bop_mul: return "mul";
+        case ir_bop_div: return "div";
         default:
             debug_error_unhandled_int("ir_bop_tag_get_str", "operation tag", tag);
             return "<unhandled>";
