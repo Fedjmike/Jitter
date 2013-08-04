@@ -37,7 +37,15 @@ void fchunk_destroy (fchunk* chunk);
  * Attempt to write to the chunk
  * @return success
  */
-bool fchunk_vout (fchunk* chunk, const char* format, ...);
+bool fchunk_out (fchunk* chunk, const char* format, ...);
+
+/**
+ * Attempt to write a reference to the code of another chunk
+ *
+ * The pointer will be sizeof(void*) wide. Will be added to both
+ * chunks' tracking of references and relocations.
+ */
+bool fchunk_reference (fchunk* chunk, fchunk* other);
 
 /**
  * Mark the chunk as finished. Disallows writing, allows calling.
