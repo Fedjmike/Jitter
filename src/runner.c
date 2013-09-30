@@ -24,7 +24,7 @@ static int run_block (const ir_block* block) {
     int result = 0;
 
     if (block->terminal)
-        return run_terminal(block->terminal, store);
+        result = run_terminal(block->terminal, store);
 
     free(store);
 
